@@ -114,7 +114,7 @@
     outline: none;
   }
   
-  .comment {
+  .commentpopoup {
     margin-top: 10px;
     width: 70%;
     height: 100px;
@@ -133,4 +133,5 @@
     margin-bottom: 10px;
     cursor: pointer;
   }
+  
   

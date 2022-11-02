@@ -1,5 +1,6 @@
 import { identity, once } from 'lodash';
 import './style.css';
+import './stylepopup.css';
 
 const cardsContainer = document.querySelector(".card-cont")
 const url = 'https://www.themealdb.com/api/json/v1/1/search.php?f=k';
@@ -64,6 +65,15 @@ fetch(url)
         </section>`;
     });
 
+
+    const comment = Array.from(document.querySelectorAll('.comment'));
+    comment.forEach((item)=>{
+      item.addEventListener('click', ()=>{
+        
+
+        
+      })
+    })
     const like = Array.from(document.querySelectorAll('.fa-regular'));
    like.forEach((item) => {
   item.addEventListener('click', () => {

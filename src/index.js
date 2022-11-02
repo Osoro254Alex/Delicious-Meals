@@ -1,6 +1,7 @@
-import { identity, once } from 'lodash';
 import './style.css';
 import './stylepopup.css';
+import popData from './modules/popup';
+import { filter } from 'lodash';
 
 const cardsContainer = document.querySelector(".card-cont")
 const url = 'https://www.themealdb.com/api/json/v1/1/search.php?f=k';
@@ -58,21 +59,25 @@ fetch(url)
           </div>
           <p data-id ="${item.idMeal}" class="likes">5 Likes</p>
           <div class="btns">
-              <button class="comment">Comments</button>
+              <button data-name ="${item.idMeal}" class="comment">Comments</button>
           </div>
         </section>`;
     });
 
 
     const comment = Array.from(document.querySelectorAll('.comment'));
-    comment.forEach((item)=>{
-      item.addEventListener('click', ()=>{
-        
-
+    comment.forEach((itemss)=>{
+      itemss.addEventListener('click', (e)=>{
+        data.forEach((item) =>{
+          if(item.idMeal === e.target.dataset.name){
+            popData(item)
+          }
+        })
         
       })
     })
-    const like = Array.from(document.querySelectorAll('.fa-regular'));
+
+  const like = Array.from(document.querySelectorAll('.fa-regular'));
    like.forEach((item) => {
   item.addEventListener('click', () => {
   let make = parseInt(item.parentElement.parentElement.nextElementSibling.innerText, 10);

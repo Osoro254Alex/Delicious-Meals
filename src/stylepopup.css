@@ -5,12 +5,12 @@
   }
   
   ::-webkit-scrollbar {
-    width: 5px;
-    background-color: rgb(52, 255, 1);
+    width: 10px;
+    background-color: #111111;
   }
   
   ::-webkit-scrollbar-thumb {
-    width: 5px;
+    width: 10px;
     background-color: var(--blend-color);
     border-radius: 30px;
   }
@@ -18,16 +18,28 @@
   :root{
       --bg-color: bisque;
       --text-color: brown;
-      --blend-color: gold;
+      --blend-color: #e7e6dd;
   }
 
-  
-  .center {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  .popin {
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 0 24px 24px;
+    width: 90%;
+    margin: 0 auto;
+    height: 95%;
+    background-color: rgba(255, 255, 255, 0.16);
+    z-index: 100000;
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    overflow-y: scroll;
+  }
 
+  .displayer {
+    display: none;
   }
   
   .modal-section{
@@ -100,9 +112,11 @@
     outline: none;
   }
   
-  .commentpopoup {
+  .commentpopup {
     margin-top: 10px;
-    width: 70%;
+    padding: 10px;
+    width: 65%;
+    height: 6rem;
     outline: none;
     background: var(--bg-color);
     border-radius: 8px;

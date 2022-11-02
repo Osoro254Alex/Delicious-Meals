@@ -35,9 +35,7 @@ cardsContainer.addEventListener("click", (e)=>{
     childArr.forEach((child) =>{
       child.classList.toggle("active")
     })
-  
   }
-  
   })
 
 

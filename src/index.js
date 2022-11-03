@@ -3,7 +3,8 @@ import './style.css';
 import './stylepopup.css';
 
 const cardsContainer = document.querySelector(".card-cont")
-const url = 'https://www.themealdb.com/api/json/v1/1/search.php?f=k';
+const center = document.getElementById('center');
+const url = 'https://www.themealdb.com/api/json/v1/1/search.php?f=h';
 
 const involve = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/wIvcfoeCMowsKdAOdXJy/likes/';
 
@@ -47,6 +48,7 @@ fetch(url)
     data = data.meals;
     data.pop()
     data.forEach((item) => {
+      console.log(item);
         cardsContainer.innerHTML += `
         <section class="card">
           <img class="card-img" src="${item.strMealThumb
@@ -60,6 +62,7 @@ fetch(url)
           </div>
           <p data-id ="${item.idMeal}" class="likes">5 Likes</p>
           <div class="btns">
+          <p hidden>${item.strInstructions}</p>
               <button class="comment">Comments</button>
           </div>
         </section>`;
@@ -69,11 +72,35 @@ fetch(url)
     const comment = Array.from(document.querySelectorAll('.comment'));
     comment.forEach((item)=>{
       item.addEventListener('click', ()=>{
-        
+        center.innerHTML='';
+        center.style.display="flex";
+    
+        center.innerHTML +=
+        `<section class="modal-section">
+        <div class="container">
+            <div class="xicon"><i class="fa-solid fa-xmark" id="x-marks"></i></div>
+            <img class="foodimg"
+                src="${item.parentElement.parentElement.children[0].getAttribute('src')}"
+                alt="">
+            <h3 class="dfi">${item.parentElement.parentElement.children[1].children[0].innerText}</h3>
+            <p class="paragraph">${item.previousElementSibling.innerText}</p>
+            <p class="comments">Comments</p>
+            <p class="atc">Add To Comment</p>
+            <input type="text" class="name" id="name" placeholder="Enter Your Name">
+            <textarea name="comments" id="comments" class="commentpopup">
+            </textarea>
+            <input type="submit" value="Submit" class="submit">
+        </div>
+      </div>
+</section>`;   
+let xMaks=document.getElementById("x-marks");
+xMaks.addEventListener('click',()=>{
+  center.innerHTML='';
+  center.style.display="none";
 
-        
-      })
-    })
+})
+})});
+
     const like = Array.from(document.querySelectorAll('.fa-regular'));
    like.forEach((item) => {
   item.addEventListener('click', () => {

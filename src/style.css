@@ -13,12 +13,15 @@
 }
 
 body {
-  padding: 1rem 1rem 0 1rem;
   background-color: var(--primary-color);
   display: flex;
   flex-direction: column;
   gap: 2rem;
   font-size: 1.1rem;
+}
+
+.body {
+  opacity: 0.2;
 }
 
 .head {
@@ -60,6 +63,7 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   row-gap: 3.5rem;
+  padding: 0 1rem;
 }
 
 .card {
@@ -150,8 +154,7 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  border-radius: 15px;
-  padding: .5rem 1rem 0 1rem;
+  padding: 0.5rem 1rem 0 1rem;
 }
 
 .flogo {
@@ -161,6 +164,7 @@ body {
   display: flex;
   justify-content: center;
 }
+
 li a {
   text-decoration: none;
   color: antiquewhite;
@@ -174,6 +178,7 @@ li a {
   display: flex;
   flex-direction: column;
   width: 30%;
+
   /* border: 3px solid beige; */
   justify-content: center;
   align-items: center;
@@ -202,6 +207,7 @@ li a {
   display: flex;
   flex-direction: column;
   width: 30%;
+
   /* border: 2px solid beige; */
 }
 
@@ -220,7 +226,7 @@ li a {
   margin-top: 10px;
 }
 
-.social-icon ul{
+.social-icon ul {
   font-size: 30px;
   color: aliceblue;
   display: flex;
@@ -228,7 +234,6 @@ li a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
 }
 
 .social-icon li {
@@ -236,7 +241,6 @@ li a {
   color: aliceblue;
   display: flex;
 }
-
 
 @media screen and (max-width: 600px) {
   * {
@@ -303,8 +307,8 @@ li a {
 
   .card-img:hover {
     transform: translateY(0);
-    border: 0px solid var(--shadow-color);
-    box-shadow: 0px 0px 0px var(--shadow-color);
+    border: 0 solid var(--shadow-color);
+    box-shadow: 0 0 0 var(--shadow-color);
   }
 
   .row {
@@ -353,6 +357,7 @@ li a {
     transform: translateY(0);
     color: #000;
   }
+
   .footer {
     width: 100%;
     height: auto;
@@ -361,66 +366,69 @@ li a {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .flogo {
     width: 30%;
     font-size: 50px;
     list-style: none;
+
     /* border: 2px solid white; */
     display: flex;
     justify-content: center;
   }
+
   li a {
     text-decoration: none;
     color: antiquewhite;
   }
-  
+
   .ban {
     color: var(--primary-color);
   }
-  
+
   .app {
     display: flex;
     flex-direction: column;
     width: 100%;
+
     /* border: 3px solid beige; */
     justify-content: center;
     align-items: center;
   }
-  
+
   .gop {
     color: aliceblue;
     font-size: 40px;
   }
-  
+
   .app-store ul {
     display: flex;
     flex-direction: row;
     gap: 50px;
     margin-top: 20px;
   }
-  
+
   .apple {
     color: aliceblue;
     font-size: 30px;
     text-decoration: none;
     list-style: none;
   }
-  
+
   .info {
     display: flex;
     flex-direction: column;
     width: 100%;
+
     /* border: 2px solid beige; */
   }
-  
-  .contact  {
+
+  .contact {
     color: beige;
     font-size: 30px;
     text-align: center;
   }
-  
-  
+
   .email {
     color: white;
     display: flex;
@@ -429,7 +437,7 @@ li a {
     font-size: 20px;
     margin-top: 10px;
   }
-  
+
   .social-icon ul {
     width: 100%;
     font-size: 30px;
@@ -439,15 +447,13 @@ li a {
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    
-  
   }
-  
+
   .social-icon li {
     list-style: none;
     color: aliceblue;
-    
   }
+
   .twitter {
     margin-top: 10px;
     margin-bottom: 10px;

@@ -1,25 +1,23 @@
 import './style.css';
 import './stylepopup.css';
-import popData from './modules/popup';
-import { filter } from 'lodash';
+import popData from './modules/popup.js';
+import foods from './modules/recordfood.js';
 
-const cardsContainer = document.querySelector(".card-cont")
+const cardsContainer = document.querySelector('.card-cont');
 const url = 'https://www.themealdb.com/api/json/v1/1/search.php?f=k';
 
-const involve = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/wIvcfoeCMowsKdAOdXJy/likes/';
-
+const involve = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/7wsNKEjPfzGMOmZ1AdMF/likes/';
 
 const liking = (arr) => {
   const ids = document.querySelectorAll('.likes');
   arr.forEach((element) => {
     ids.forEach((id) => {
       if ((element.item_id) === Number((id.dataset.id))) {
-        id.innerText = `${element.likes} likes`;
+        id.innerText = `${element.likes} Likes`;
       }
     });
   });
 };
-
 
 const getArr = () => {
   fetch(involve)
@@ -27,29 +25,26 @@ const getArr = () => {
     .then((data) => liking(data));
 };
 
-
-cardsContainer.addEventListener("click", (e)=>{
-
-  if(e.target.className === "fa-regular fa-heart icon"){
-    const children = e.target.parentElement.children;
-    const childArr = Array.from(children)
-    childArr.forEach((child) =>{
-      child.classList.toggle("active")
-    })
+cardsContainer.addEventListener('click', (e) => {
+  if (e.target.className === 'fa-regular fa-heart icon') {
+    const { children } = e.target.parentElement;
+    const childArr = Array.from(children);
+    childArr.forEach((child) => {
+      child.classList.toggle('active');
+    });
   }
-  })
-
+});
 
 fetch(url)
   .then((res) => res.json())
   .then((data) => {
     data = data.meals;
-    data.pop()
+    data.pop();
     data.forEach((item) => {
-        cardsContainer.innerHTML += `
+      cardsContainer.innerHTML += `
         <section class="card">
           <img class="card-img" src="${item.strMealThumb
-          }" alt="Meal-image">
+}" alt="Meal-image">
           <div class="row">
               <h3>${item.strMeal}</h3>
               <div id="${item.idMeal}" class = "icon-bag">
@@ -64,50 +59,42 @@ fetch(url)
         </section>`;
     });
 
-
     const comment = Array.from(document.querySelectorAll('.comment'));
-    comment.forEach((itemss)=>{
-      itemss.addEventListener('click', (e)=>{
-        data.forEach((item) =>{
-          if(item.idMeal === e.target.dataset.name){
-            popData(item)
+    comment.forEach((itemss) => {
+      itemss.addEventListener('click', (e) => {
+        data.forEach((item) => {
+          if (item.idMeal === e.target.dataset.name) {
+            popData(e.target.dataset.name);
           }
-        })
-        
-      })
-    })
-
-  const like = Array.from(document.querySelectorAll('.fa-regular'));
-   like.forEach((item) => {
-  item.addEventListener('click', () => {
-  let make = parseInt(item.parentElement.parentElement.nextElementSibling.innerText, 10);
-  const identit = Number(item.parentElement.id);
-
-    const object = {
-      item_id: identit,
-      likes: make,
-    };
-
-    fetch(involve, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(object),
+        });
+      });
     });
 
-    make += 1;
+    const like = Array.from(document.querySelectorAll('.fa-regular'));
+    like.forEach((item) => {
+      item.addEventListener('click', () => {
+        let make = parseInt(item.parentElement.parentElement.nextElementSibling.innerText, 10);
+        const identit = Number(item.parentElement.id);
 
-    item.parentElement.parentElement.nextElementSibling.innerText = `${make} likes;`
-  }, { once: true });
-});
-})
-.then(getArr());
+        const object = {
+          item_id: identit,
+          likes: make,
+        };
 
+        fetch(involve, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(object),
+        });
 
+        make += 1;
 
+        item.parentElement.parentElement.nextElementSibling.innerText = `${make} Likes`;
+      }, { once: true });
+    });
 
-
-
-
-
-
-
+    const allFoods = Array.from(document.querySelectorAll('.card'));
+    const meals = document.querySelector('.title');
+    meals.innerText = `Delicious Meals(${foods(allFoods)})`;
+  })
+  .then(getArr());

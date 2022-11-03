@@ -2,7 +2,7 @@
 
 # Project: Delicious Meals
 
-## In this milestone I will Recreate the Delicious Meals: with APIs:
+## In this milestone We will Create the Delicious Meals: with APIs:
 
 > In this project, We will restructure Delicious Meals Website app. The goal is to make it more organized by using APIs. We will also practice the use of APIs, Module, Jest Test and ES6 syntax that We have learned.
 

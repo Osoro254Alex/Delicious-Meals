@@ -93,8 +93,6 @@ const popData = async (elId) => {
       submit.addEventListener('click', (e) => {
         e.preventDefault();
 
-        
-
         if (!(nameInput.value === '' || commInput.value === '')) {
           renderComment(elId, nameInput.value, commInput.value);
           totalComms += 1;

@@ -93,9 +93,10 @@ const popData = async (elId) => {
       submit.addEventListener('click', (e) => {
         e.preventDefault();
 
-        renderComment(elId, nameInput.value, commInput.value);
+        
 
         if (!(nameInput.value === '' || commInput.value === '')) {
+          renderComment(elId, nameInput.value, commInput.value);
           totalComms += 1;
           commee.innerText = `Comments (${totalComms})`;
 

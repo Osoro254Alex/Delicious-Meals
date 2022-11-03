@@ -16,7 +16,7 @@
 
 - Open the command prompt in the created directory.
 
-- On the terminal run this command git clone https://github.com/Osoro254Alex/Delicious Meals
+- On the terminal run this command git clone https://github.com/Osoro254Alex/Delicious-Meals
 
 - Go to the repository folder using command prompt cd Awesome-Book.
 
@@ -35,12 +35,12 @@
 
 ## Collaborators
 
-- GitHub Username: [Rashid](https://github.com/Rashid Menhas)
+- GitHub Username: [Rashid](https://github.com/RashidMenhas)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
-Feel free to check the [issues](https://github.com/Osoro254Alex/Delicious Meals/issues)
+Feel free to check the [issues](https://github.com/Osoro254Alex/Delicious-Meals/issues)
 
 ## Show your support
 

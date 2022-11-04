@@ -67,7 +67,7 @@ const popData = async (elId) => {
         commee.innerText = `Comments (${totalComms})`;
         comms.forEach((item) => {
           commentCont.innerHTML += `
-    <p> 
+    <p class="parr"> 
     <time class ="time">${todayDate}</time>   
     <big class="name-comme">${item.username} :</big> 
     <i class="comme">${item.comment}</i>

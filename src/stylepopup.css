@@ -24,15 +24,15 @@
 .popin {
   border: 2px solid black;
   border-radius: 20px;
-  width: 40%;
+  width: 60%;
   margin: 0 auto;
-  height: 95%;
+  height: 85%;
   z-index: 100000;
   position: fixed;
-  top: 10px;
+  top: 15px;
   left: 20px;
   right: 20px;
-  bottom: 20px;
+  bottom: 15px;
   overflow-y: scroll;
 }
 
@@ -146,10 +146,28 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  padding: 0 20%;
+  gap: 0.3rem;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   color: #f01010;
   margin: 1rem 0;
+}
+
+.parr {
+  border-bottom: 1px solid gray;
+  width: 100%;
+  padding: 0.2rem;
+}
+
+.parr:first-child {
+  border-top: 5px solid var(--text-color);
+  padding-top: 0.5rem;
+}
+
+.parr:last-child {
+  border-bottom: 5px solid var(--text-color);
+  padding-bottom: 0.5rem;
 }
 
 .comme {
@@ -176,13 +194,13 @@
     border-radius: 20px;
     width: 90%;
     margin: 0 auto;
-    height: 95%;
+    height: 85%;
     z-index: 100000;
     position: fixed;
-    top: 10px;
+    top: 20px;
     left: 20px;
     right: 20px;
-    bottom: 20px;
+    bottom: 15px;
     overflow-y: scroll;
   }
 
@@ -296,8 +314,10 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding: 0 16%;
+    gap: 0.3rem;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     color: #f01010;
     margin: 1rem 0;
   }
@@ -306,13 +326,29 @@
     color: #000;
   }
 
+  .parr {
+    border-bottom: 1px solid gray;
+    width: 100%;
+    padding: 0.2rem;
+  }
+
+  .parr:first-child {
+    border-top: 5px solid var(--text-color);
+    padding-top: 0.5rem;
+  }
+
+  .parr:last-child {
+    border-bottom: 5px solid var(--text-color);
+    padding-bottom: 0.5rem;
+  }
+
   .submit {
     margin-top: 10px;
     font-size: 1rem;
     padding: 5px;
     border-radius: 5px;
     background-color: var(--bg-color);
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     width: 30%;
     cursor: pointer;
     display: flex;

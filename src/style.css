@@ -49,13 +49,13 @@ body {
 }
 
 .text {
-  padding: 0.3rem;
+  padding: 0;
 }
 
 .mini-para {
   border-left: 2px solid var(--shadow-color);
   margin: 0;
-  padding: 0.2rem;
+  padding: 0;
 }
 
 .card-cont {
@@ -263,19 +263,29 @@ li a {
     flex-direction: column;
     gap: 2rem;
     font-size: 1.1rem;
+    width: 100%;
   }
 
   .head {
     display: flex;
+    flex-direction: row;
     width: 100%;
     align-items: center;
     text-align: center;
     justify-content: space-around;
   }
 
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .foos {
+    display: none;
+  }
+
   .img {
-    width: 6rem;
-    height: 6rem;
+    width: 4rem;
+    height: 4rem;
     border-radius: 50%;
   }
 

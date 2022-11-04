@@ -8,7 +8,7 @@
 
 ## Link to the live page
 
-> Feel free to check the [Delicious Meals-link](https://osoro254alex.github.io/).
+> Feel free to check the [Delicious Meals-Live-link](https://osoro254alex.github.io/Delicious-Meals/).
 
 ## Getting Started
 

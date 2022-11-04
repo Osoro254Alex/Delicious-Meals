@@ -5,7 +5,6 @@
   "private": true,
   "scripts": {
     "deploy": "gh-pages -d dist",
-    "test": "jest",
     "start": "webpack serve --open",
     "build": "webpack"
   },
@@ -19,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/Osoro254Alex/Delicious-Meal-Website/issues"
   },
-  "homepage": "https://github.com/Osoro254Alex/Delicious-Meal-Website#readme",
+  "homepage": "https://github.com/Osoro254Alex/Delicious-Meals",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.7.1",

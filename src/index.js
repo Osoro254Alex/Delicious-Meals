@@ -4,7 +4,7 @@ import popData from './modules/popup.js';
 import foods from './modules/recordfood.js';
 
 const cardsContainer = document.querySelector('.card-cont');
-const url = 'https://www.themealdb.com/api/json/v1/1/search.php?f=k';
+const url = 'https://www.themealdb.com/api/json/v1/1/search.php?f=c';
 
 const involve = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/7wsNKEjPfzGMOmZ1AdMF/likes/';
 
@@ -39,6 +39,7 @@ fetch(url)
   .then((res) => res.json())
   .then((data) => {
     data = data.meals;
+    data.pop();
     data.pop();
     data.forEach((item) => {
       cardsContainer.innerHTML += `
